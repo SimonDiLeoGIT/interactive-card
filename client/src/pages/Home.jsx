@@ -3,6 +3,8 @@ import desktop_bg from "./../assets/bg-main-desktop.png"
 import back_card from "./../assets/bg-card-back.png"
 import front_card from "./../assets/bg-card-front.png"
 import complete from "./../assets/icon-complete.svg"
+import card_logo from "./../assets/card-logo.svg"
+import "./../styles/home.css"
 
 function Home() {
   return (
@@ -10,8 +12,15 @@ function Home() {
       <section className="cards-container">
         <div className="mobile-view">
           <img className="mobile-bg" src={mobile_bg} alt="mobile-bg" />          
-          <img className="back-card" src={back_card} alt="back-card" />
-          <img className="front-card" src={front_card} alt="front-card" />
+          <div className="back-card">
+            <p className="card-number back-card-number"> 000 </p>
+          </div>
+          <div className="front-card">
+            <img className="card-logo" src={card_logo} alt="card-logo" />
+            <p className="card-number"> 0000 0000 0000 0000 </p>
+            <p className="card-name"> JANE APPLESEED </p>
+            <p className="card-date" > 00/00 </p>
+          </div>
         </div>
         <div className="desktop-view" style={{display: "none"}}> 
           <img className="desktop-bg" src={desktop_bg} alt="desktop-bg" />          
