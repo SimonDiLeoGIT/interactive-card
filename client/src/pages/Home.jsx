@@ -5,13 +5,33 @@ import front_card from "./../assets/bg-card-front.png"
 import complete from "./../assets/icon-complete.svg"
 import card_logo from "./../assets/card-logo.svg"
 import "./../styles/home.css"
+import "./../styles/form.css"
+import { useState } from "react"
 
 function Home() {
+
+  let [mobile, setMobile] = useState(true);
+  let [desktop, setDesktop] = useState(false);
+
+  function mobileView(){
+
+  }
+  
+  function desktopView(){
+    
+  }
+
+
   return (
     <section className="home-container">
       <section className="cards-container">
+        <div className="desktop-view"> 
+          <img className="desktop-bg" src={desktop_bg} alt="desktop-bg" />
+        </div>
         <div className="mobile-view">
           <img className="mobile-bg" src={mobile_bg} alt="mobile-bg" />          
+        </div>
+        <div className="cards-container">
           <div className="back-card">
             <p className="card-number back-card-number"> 000 </p>
           </div>
@@ -21,11 +41,6 @@ function Home() {
             <p className="card-name"> JANE APPLESEED </p>
             <p className="card-date" > 00/00 </p>
           </div>
-        </div>
-        <div className="desktop-view" style={{display: "none"}}> 
-          <img className="desktop-bg" src={desktop_bg} alt="desktop-bg" />          
-          <img className="front-card" src={front_card} alt="front-card" />
-          <img className="back-card" src={back_card} alt="back-card" />
         </div>
       </section>
       <section className="form-container">
@@ -42,12 +57,18 @@ function Home() {
           <label> CARD NUMBER </label>
           <input type="number" placeholder="e.g. 1234 5678 9123 0000"/>
 
-          <label> EXP. DATE (MM/YY) </label>
-          <input type="number" placeholder="MM"/>
-          <input type="number" placeholder="YY"/>
-
-          <label> CVC </label>
-          <input type="number" placeholder="e.g. 123"/>
+          <div className="inline-inputs-container">
+            <div className="date-inputs-container">
+              <label> EXP. DATE (MM/YY) </label>
+              <input type="number" placeholder="MM"/>
+              <input type="number" placeholder="YY"/>
+            </div>
+            
+            <div className="cvc-inputs-container">
+              <label> CVC </label>
+              <input type="number" placeholder="e.g. 123"/>
+            </div>
+          </div>
 
           <button type="submit"> Confirm </button>
 

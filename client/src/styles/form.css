@@ -1,0 +1,96 @@
+@import url('./fonts.css');
+
+.form-container {
+  width: 100%;
+  position: fixed;
+  margin-top: 300px;
+  font-family: var(--font-family);
+  color: var(--very-dark-violet);
+  font-weight: 700;
+  font-size: small;
+  transition: 400ms;
+}
+
+form {
+  display: grid;
+  width: 90%;
+  margin: auto;
+}
+
+input {
+  font-family: var(--font-family);
+  margin: 0.4rem 0 1rem 0;
+  padding: 0.8rem;
+  font-size: medium;
+  border: 1px solid var(--light-grayish-violet);
+  border-radius: 10px;
+}
+
+.inline-inputs-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.date-inputs-container {
+  width: 100%;
+}
+
+.date-inputs-container input {
+  width: 20%;
+  min-width: 30px;
+  margin-right: 10px;
+}
+
+.date-inputs-container label {
+  display: block;
+}
+
+.cvc-inputs-container {
+  display: grid;
+}
+
+.cvc-inputs-container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 1rem;
+  font-family: var(--font-family);
+  color: var(--white);
+  background-color: var(--very-dark-violet);
+  border: none;
+  border-radius: 8px;
+  font-size: medium;
+  margin-top: 0.4rem;
+}
+
+@media screen and (min-width: 500px) {
+
+  .form-container {
+    margin-top: 350px;
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+
+  .form-container {
+    margin-top: 380px;
+  }
+
+  form {
+    width: 60%;
+    transition: 400ms;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  .form-container {
+    position: relative;
+    margin: auto;
+  }
+
+}
