@@ -179,7 +179,7 @@ function Home() {
             </div>
           </div>
 
-          <button type="submit"> Confirm </button>
+          <input className="submit" type="submit" value="Confirm" />
 
         </form>
       </section>
