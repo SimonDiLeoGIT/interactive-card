@@ -109,6 +109,34 @@ input[type="number"] {
   -moz-appearance:textfield; 
 }
 
+.thank-you-container {
+  position: absolute;
+  text-align: center;
+  background-color: var(--white);
+  width: 100%;
+  height: 60vh;
+}
+
+.thank-you-container h1 {
+  font-size: xx-large;
+  margin-bottom: 0;
+}
+
+.thank-you-container span {
+  display: block;
+  margin: 1rem 0;
+  font-size: large;
+  color: var(--dark-grayish-violet);
+}
+
+.thank-you-container input {
+  width: 60%;
+}
+
+.no-displayed {
+  display: none;
+}
+
 @media screen and (min-width: 500px) {
   .mobile-bg {
     height: 240px;
@@ -191,6 +219,11 @@ input[type="number"] {
 }
 
 @media screen and (min-width: 1200px) {
+
+  .home-container {
+    overflow: hidden;
+    height: 100vh;
+  }
 
   .mobile-view {
     display: none;

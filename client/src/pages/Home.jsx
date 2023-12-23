@@ -26,6 +26,7 @@ function Home() {
   let [cardInputYear, setCardInputYear] = useState("");
   let [cardInputCVC, setCardInputCVC] = useState("");
 
+  let [submitted, setSubmitted] = useState(false);
 
 
   function cardMonthHandler(value) {
@@ -70,6 +71,24 @@ function Home() {
     setCardInputCVC(value);
   }
 
+  function submitClick(){
+    setSubmitted(!submitted);
+  }
+
+  function reset() {
+    setSubmitted(!submitted);
+    setCardCVC("000");
+    setCardMonth("00");
+    setCardName("JANE APPLESEED");
+    setCardNumber("0000 0000 0000 0000");
+    setCardYear("00");
+    setCardInputCVC("");
+    setCardInputMonth("");
+    setCardInputName("");
+    setCardInputNumber("");
+    setCardInputYear("");
+  }
+
 
   const {register, handleSubmit, formState: {errors}} = useForm({
     resolver: zodResolver(formSchema),
@@ -97,10 +116,11 @@ function Home() {
         </div>
       </section>
       <section className="form-container">
-        <section className="thank-you-container" style={{display:"none"}}>
+        <section className={submitted ? "thank-you-container" : "thank-you-container no-displayed"}>
           <img src={complete} alt="complete" />
-          <h1> THANK YOU </h1>
+          <h1> THANK YOU! </h1>
           <span> We've added your card details </span>
+          <input className="submit" onClick={reset} type="submit" value="Continue"/>
         </section>
 
         <form onSubmit={handleSubmit(data => {console.log(data)})}>
@@ -179,7 +199,8 @@ function Home() {
             </div>
           </div>
 
-          <input className="submit" type="submit" value="Confirm" />
+          <input className="submit" onClickCapture={() => (!errors.cvc && !errors.mes && !errors.year && !errors.number && !errors.name) 
+                                              && submitClick()} type="submit" value="Confirm" />
 
         </form>
       </section>
