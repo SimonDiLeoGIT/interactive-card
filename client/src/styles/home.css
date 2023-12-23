@@ -1,12 +1,17 @@
 @import url('./fonts.css');
 
+.home-container {
+  min-height: 100vh;
+  overflow: scroll;
+}
+
 .desktop-view {
-  width: 100vh;
+  min-height: 100vh;
   display: none;
 }
 
 .mobile-bg {
-  position: fixed;
+  position: absolute;
   z-index: 0;
   width: 100%;
   height: 240px;
@@ -17,7 +22,7 @@
 .back-card , .front-card {
   width: 270px;
   height: 150px;
-  position: fixed;
+  position: absolute;
   color: white;
   font-family: var(--font-family);
   transition: 0.8s;
@@ -93,6 +98,15 @@
   to {
     transform: translateY(0px);
   }
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type="number"] { 
+  -moz-appearance:textfield; 
 }
 
 @media screen and (min-width: 500px) {
